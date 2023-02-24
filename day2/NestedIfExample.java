@@ -5,7 +5,7 @@ public class NestedIfExample {
 	public static void main(String[] args) {
 		 double income = 110000;
 		 float rate= 0.0f;
-		 if(income<0) rate = (float) 0.00;
+		 if(income<0) rate = (float) 0.00f;
 		 else if(income<8925) rate = (float) 0.10;
 		 else if(income<36250) rate = (float) 0.15;
 		 else if(income<87850) rate = (float) 0.23;
