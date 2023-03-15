@@ -1,6 +1,8 @@
 package week3.Week3Day3;
 
 import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -31,25 +33,26 @@ public class Assignment7AjioBagsSearch {
 			}
 		dr.findElement(By.xpath("(//div[@class='facet-linkhead']/label)[1]")).click();
 		dr.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
-		//WebElement chooseSelection = dr.findElement(By.xpath("//*[text()='Fashion Bags (613)']/parent::div"));
 		WebElement chooseSelection = dr.findElement(By.xpath("(//div[@class='facet-body'])[2]//li[2]"));
 		try {
 		chooseSelection.click();
 		}catch(StaleElementReferenceException ex) {
 			chooseSelection = dr.findElement(By.xpath("(//div[@class='facet-body'])[2]//li[2]"));
-//			chooseSelection = dr.findElement(By.xpath("//*[text()='Fashion Bags (613)']/parent::div"));
 			chooseSelection.click();
 		}
-//		String itemsFound = dr.findElement(By.xpath("(//div[@class=' filter-container']//div)[2]")).getText();  
-		//  (//div[@class=' filter-container']//div)[2]
-		String itemsFound = dr.findElement(By.xpath("(//div[@class=' filter-container']//div)[2]")).getText();
-		System.out.println(chooseSelection.getText());
+
+		System.out.println("Items Found: "+chooseSelection.getText());
 		
+
+		List<WebElement> allPopupBags = dr.findElements(By.className("brand"));		
+		int sizeOfallPriceValues = allPopupBags.size();
 		
-		WebElement brandClick = dr.findElement(By.xpath("//span[text()='brands']"));
-		brandClick.click();
-		
-		
+		for(int i=0;i<=sizeOfallPriceValues-1;i++) {
+			WebElement setAllPrice = allPopupBags.get(i);
+			String textOfsetAllPrice = setAllPrice.getText();
+						
+			System.out.println("All Display for brand class : "+textOfsetAllPrice);
+		}
 		
 	}
 
