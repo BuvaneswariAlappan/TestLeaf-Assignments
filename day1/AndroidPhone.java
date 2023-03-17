@@ -6,7 +6,7 @@ public class AndroidPhone extends Mobile {
 		// TODO Auto-generated method stub
 		takeVideo();
 	}
-
+	// takeVideo Method
 	public static void takeVideo() {
 		System.out.println(" Hi, I am in AndroidPhone Father class - takeVideo method");
 		
