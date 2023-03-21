@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="ParamSuite" verbose="5" thread-count="5">
+
+<!-- <test name="Chrome">
+<parameter name="browser" value="chrome" />
+<parameter name="url" value="http://leaftaps.com/opentaps/" />
+<parameter name="username" value="DemoSalesManager" />
+<parameter name="password" value="crmsfa" />
+  <test parallel="classes" name="Chrome">
+    <classes>
+      <class name="week5.Day1.Week5Day1.CreateLead"/>
+      <class name="week5.Day1.Week5Day1.EditLead"/>
+    </classes>
+  </test> Chrome -->
+  
+  <test name="Edge">
+<parameter name="browser" value="edge" />
+<parameter name="url" value="http://leaftaps.com/opentaps/" />
+<parameter name="username" value="DemoSalesManager" />
+<parameter name="password" value="crmsfa" />
+  <!-- <test parallel="classes" name="Chrome"> -->
+    <classes>
+      <class name="week5.Day1.Week5Day1.CreateLead"/>
+      <!-- <class name="week5.Day1.Week5Day1.EditLead"/> -->
+    </classes>
+  </test> <!-- Edge -->
+  
+  
+</suite> <!-- ParamSuite -->
